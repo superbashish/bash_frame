@@ -6,7 +6,7 @@ Home=/home/frame/
 cd $Home
 
 
-rm -f $FullList ShowList
+rm $FullList $ShowList
 
 pkill X 
 export DISPLAY=:0
