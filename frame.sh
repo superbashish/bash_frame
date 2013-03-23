@@ -1,7 +1,7 @@
 #!/bin/bash
 FullList=/tmp/list
 ShowList=/tmp/show
-Photos=/home/Photos/
+Photos=/home/Photos/201[2-3]*
 Home=/home/frame/
 cd $Home
 
@@ -23,7 +23,7 @@ while true; do
 	y=$( /usr/bin/tvservice -s | fgrep -c 'progressive') # Test if screen is off
 	echo $y
 	if [ "$y" == 1 ]; then 
-		find -L "$Photos" -type f | grep -i ".j" > $FullList
+		find -L ${Photos} -type f | grep -i ".j" > $FullList
 		N=$( cat $FullList | wc -l )
 		N=$(( N - 20 ))
 		for f in $( seq 1 20); do
